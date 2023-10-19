@@ -2,10 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 // initial state
 const initialState = {
-  todos: [
-    {"text": "Meeting at 9", completed: true},
-    {"text": "Dinner at 2", completed: false},
-  ]
+  todos: []
 }
 
 // Creating Reducer using Redux Toolkit
@@ -16,6 +13,10 @@ const todoSlice = createSlice({
   initialState: initialState,
 
   reducers: {
+    // action name
+    setInitialState: (state, action) => {
+      state.todos = [...action.payload];
+    },
 
     // this is add action
     add: (state, action) => {

@@ -13,7 +13,8 @@ function ToDoList() {
     axios.get("http://localhost:4100/api/todos")
       .then((res) => {
         // handle success
-        console.log(res);        
+        console.log(res);    
+        dispatch(actions.setInitialState(res.data));    
       })
       .catch((error) => {
         // handle error
